@@ -7,7 +7,7 @@ export class storageService {
   dataBases;
 
   constructor() {
-    this.client.setEndPoint(conf.appWriteURL).serProject(conf.projectId);
+    this.client.setEndpoint(conf.appWriteURL).serProject(conf.projectId);
     this.dataBases = new Databases(this.client);
     this.storage = new Storage(this.client);
   }

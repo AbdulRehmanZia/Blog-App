@@ -3,6 +3,10 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import authService, { AuthService } from "./appwrite/auth";
 import { login, logout } from "./features/authSlice";
+import Header from "./components/header/Header";
+// import Footer from "./components/footer/Footer";
+import Container from "./components/container/Container";
+import LogoutBtn from "./components/header/LogoutBtn";
 
 function App() {
   console.log(import.meta.env.VITE_APPWRITE_URL);
@@ -24,7 +28,16 @@ function App() {
 
   return (
     <>
-      {loading ? <div>Loading</div>: <h1>No Loading</h1>}
+      {loading ? (
+        <>
+          <Header />
+          {/* <Footer /> */}
+        </>
+      ) : (
+        <h1>No Loading</h1>
+      )}
+      <Container />
+      <LogoutBtn />
     </>
   );
 }
